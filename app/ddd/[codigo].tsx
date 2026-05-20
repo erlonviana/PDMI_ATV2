@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ActivityIndicator, Alert, FlatList } from 'react-native';
 import { useLocalSearchParams, router } from 'expo-router';
 
-// Interface para tipagem da API
 interface DDDResponse {
   state: string;
   cities: string[];
@@ -114,7 +113,7 @@ export default function DDDResultScreen() {
       </View>
       
       <FlatList
-        data={sortedCities}  // ← Usa a lista ordenada
+        data={sortedCities}
         keyExtractor={(item, index) => `${item}-${index}`}
         renderItem={({ item }) => (
           <View style={styles.cityItem}>
