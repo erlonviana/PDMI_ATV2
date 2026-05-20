@@ -97,6 +97,9 @@ export default function DDDResultScreen() {
     );
   }
 
+  
+  const sortedCities = [...data.cities].sort((a, b) => a.localeCompare(b));
+
   return (
     <View style={styles.container}>
       <View style={styles.dddHeader}>
@@ -111,7 +114,7 @@ export default function DDDResultScreen() {
       </View>
       
       <FlatList
-        data={data.cities}
+        data={sortedCities}  // ← Usa a lista ordenada
         keyExtractor={(item, index) => `${item}-${index}`}
         renderItem={({ item }) => (
           <View style={styles.cityItem}>
